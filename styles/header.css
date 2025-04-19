@@ -1,0 +1,53 @@
+header {
+  text-align: center;
+  padding: 1rem;
+  background: transparent;
+  color: var(--text-light);
+}
+
+header h1 {
+  animation: pulse 5s infinite;
+}
+
+.foto_perfil {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin: 20px auto;
+  display: block;
+  border: 5px solid grey;
+  border-radius: 50%;
+  transition: transform var(--transition-speed) ease;
+}
+
+.foto_perfil:hover {
+  transform: scale(1.05);
+  border-color: var(--accent-color);
+}
+
+.profissao {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.typewriter h1 {
+  font-family: 'Chakra Petch', sans-serif;  
+  font-size: clamp(28px, 5vw, 48px);
+  color: var(--text-light);
+  overflow: hidden;
+  border-right: 2px solid white;
+  white-space: nowrap;
+  width: 0;
+  animation: 
+    typing 4s steps(20, end) forwards, 
+    blink 0.5s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}

@@ -1,0 +1,828 @@
+/* CSS Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #007BFF;
+  --primary-dark: #0056b3;
+  --accent-color: #ffa500;
+  --text-light: #fff;
+  --text-dark: #333;
+  --bg-dark: #333;
+  --border-radius: 10px;
+  --transition-speed: 0.3s;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: var(--text-dark);
+  position: relative;
+  z-index: 1;
+}
+
+/* Background Video */
+.video_particulas {
+  position: fixed;
+  top: 0;
+  left: 0; 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(60%);
+}
+  
+.profissao {
+  font-weight: bold;
+  color: var(--primary-color);
+ 
+}
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: all var(--transition-speed) ease;
+  
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+/* Typewriter Animation */
+.typewriter h1 {
+  font-family: 'Chakra Petch', sans-serif;  
+  font-size: clamp(28px, 5vw, 48px); /* Responsive font size */
+  color: var(--text-light);
+  overflow: hidden;
+  border-right: 2px solid white;
+  white-space: nowrap;
+  width: 0;
+  animation: 
+    typing 4s steps(20, end) forwards, 
+    blink 0.5s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Header */
+header {
+  background: transparent;
+  color: var(--text-light);
+  text-align: center;
+  padding: 1rem;
+}
+
+header h1 {
+  animation: pulse 5s infinite;
+}
+
+/* Navigation */
+nav {
+ position: relative;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;      /* Alinha os itens do menu */
+  align-items: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.8); /* Fundo com transparência */
+  backdrop-filter: blur(10px); /* Efeito de blur no fundo */
+  z-index: 1000;
+  transition: all var(--transition-speed) ease;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: var(--text-light);
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all var(--transition-speed) ease;
+  border-radius: 5px;
+  padding: 0.8rem 1.2rem;
+}
+
+.nav-links li a:hover {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  transform: translateY(-2px);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: transform var(--transition-speed) ease;
+}
+
+/* Sections */
+section {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+section h2 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+/* Skills Section */
+#habilidades {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#habilidades h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--text-light);
+}
+
+.skills-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.skill {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+}
+
+.skill-icon {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  transition: transform var(--transition-speed) ease, 
+              color var(--transition-speed) ease;
+}
+
+.skill-icon:hover {
+  transform: scale(1.3);
+  color: var(--accent-color);
+}
+
+.skill h3 {
+  font-size: 1.2rem;
+  color: var(--text-light);
+}
+
+/* About Section */
+.titulo_pro {
+  text-align: center;
+  align-items: center;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+
+
+/* Projects Section */
+#projetos {
+  display: flex;
+  justify-content: center;
+  margin: 0 50px;
+  gap: 1.5rem;
+  color: var(--text-light);
+}
+
+.projeto {
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+  text-align: center;
+  background-color: transparent;
+  transition: transform var(--transition-speed) ease;
+}
+
+.projeto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.projeto h3 {
+  margin-bottom: 0.5rem;
+}
+
+.projeto a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--text-light);
+  padding: 1em;
+  border-radius: 1em;
+  background: var(--primary-color);
+  transition: transform var(--transition-speed), 
+              box-shadow var(--transition-speed),
+              background-color var(--transition-speed);
+}
+
+.projeto a:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-decoration: underline;
+  background-color: var(--primary-dark);
+}
+/* Esconde os projetos adicionais inicialmente */
+#mais-projetos {
+  display: none;
+}
+
+#mais-projetos  {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 50px;
+  margin-top: 2rem;
+  gap: 10px;
+  color: var(--text-light);
+}
+#btn-mais-projetos {
+  display: block;
+  margin: 20px auto;
+  padding: 20px 30px;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease;
+}
+
+
+#projeto-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: transparent;
+  width: 100%;
+  margin-top: 1rem; 
+}
+
+#btn-projeto {
+  display: inline-block;
+    margin: 0.5rem;
+    width: 100%; /* Largura fixa para todos os botões */
+    color: var(--text-light);
+    background: var(--primary-color);
+    transition: transform var(--transition-speed), 
+                box-shadow var(--transition-speed),
+                background-color var(--transition-speed);
+}
+
+
+
+/* Contact Section */
+.container {
+  position: relative;
+  width: 440px;
+  height: 44px;
+  margin: 0 auto;
+}
+
+.container .link,
+.container .div-wrapper {
+  position: absolute;
+  height: 44px;
+  top: 0;
+  border-radius: 30px;
+  border: 2px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color var(--transition-speed) ease,
+              border-color var(--transition-speed) ease;
+}
+
+.container .link {
+  width: 199px;
+  left: 0;
+}
+
+.container .div-wrapper {
+  width: 196px;
+  left: 229px;
+}
+
+.container .link:hover,
+.container .div-wrapper:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--primary-color);
+}
+
+.container .text-wrapper,
+.container .div {
+  font-family: "Lato-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--text-light);
+  font-size: 18px;
+  letter-spacing: 1px;
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+.contato-container {
+  max-width: 900px;
+  margin: auto;
+  display: flex; 
+  justify-content: center;
+}
+
+.links {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+}
+
+#contato a {
+  display: flex;
+  align-items: center;
+  color: var(--primary-color);
+  margin: 0 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all var(--transition-speed) ease;
+}
+
+#contato a:hover {
+  color: var(--text-light);
+  background-color: var(--primary-dark);
+  text-decoration: none;
+  transform: scale(1.1);
+}
+
+.certificado {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10%;
+  border: 2px solid #ccc;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-speed) ease,
+              border-color var(--transition-speed) ease;
+}
+
+.certificado:hover {
+  transform: scale(1.1);
+  border-color: var(--primary-color);
+}
+
+.certificado-link {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: none;
+  transition: color var(--transition-speed) ease;
+}
+
+.certificado-link:hover {
+  color: var(--primary-dark);
+}
+/* Footer */
+footer {
+  text-align: center;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Back to Top Button */
+#topBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--primary-color);
+  color: var(--text-light);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color var(--transition-speed) ease,
+              transform var(--transition-speed) ease;
+}
+
+#topBtn:hover {
+  background: var(--primary-dark);
+  transform: scale(1.1);
+}
+
+/* Profile Photo */
+.foto_perfil {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin: 20px auto;
+  display: block;
+  border: 5px solid grey;
+  border-radius: 50%;
+  transition: transform var(--transition-speed) ease;
+}
+
+.foto_perfil:hover {
+  transform: scale(1.05);
+  border-color: var(--accent-color);
+}
+
+.foto_projeto_tesla {
+  width: 100%; /* Muda para largura responsiva */
+  max-width: 300px; /* Limita a largura máxima */
+  height: auto; /* Altura automática para manter proporção */
+  object-fit: cover;
+  margin: 20px auto;
+  display: block;
+  border: 5px solid grey;
+  border-radius: 5px;
+  transition: all var(--transition-speed) ease;
+}
+
+.foto_projeto_tesla:hover {
+  transform: scale(1.05);
+  border-color: var(--primary-color);
+}
+
+/* Adicione estas media queries para ajustes específicos */
+@media (max-width: 768px) {
+  .foto_projeto_tesla {
+    max-width: 100%; /* Em telas menores, ocupa 100% do container */
+    margin: 15px auto; /* Reduz margem em telas menores */
+    border-width: 3px; /* Borda mais fina em telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .foto_projeto_tesla {
+    margin: 10px auto; /* Margem ainda menor em telas muito pequenas */
+    border-width: 2px; /* Borda ainda mais fina */
+  }
+}
+
+/* Certificates Section */
+#certificados {
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+#certificados h2 {
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.certificados-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 20px;
+}
+
+.certificados-icon-container a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 5rem;
+  transition: transform var(--transition-speed), 
+              color var(--transition-speed);
+}
+
+.certificados-icon-container a:hover {
+  transform: scale(1.2);
+  color: var(--primary-dark);
+}
+
+.foto_certificado {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-speed) ease,
+              border-color var(--transition-speed) ease;
+}
+
+.foto_certificado:hover {
+  transform: scale(1.1);
+  border-color: var(--primary-color);
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  #projetos {
+    flex-direction: column;
+    margin: 0 50px;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    z-index: 1001;
+  }
+
+  .menu-toggle:hover {
+    transform: scale(1.1);
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Começa fora da tela */
+    width: 80%; /* Ocupa 80% da largura */
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: left var(--transition-speed) ease;
+    gap: 30px;
+  }
+
+  .nav-links.show {
+    left: 0; /* Desliza para dentro da tela */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-links li {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all var(--transition-speed) ease;
+  }
+
+  .nav-links.show li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Atraso na animação para cada item */
+  .nav-links li:nth-child(1) { transition-delay: 0.1s; }
+  .nav-links li:nth-child(2) { transition-delay: 0.2s; }
+  .nav-links li:nth-child(3) { transition-delay: 0.3s; }
+  .nav-links li:nth-child(4) { transition-delay: 0.4s; }
+
+  .nav-links li a {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Overlay escuro quando menu está aberto */
+  .nav-links::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity var(--transition-speed) ease;
+    pointer-events: none;
+  }
+
+  .nav-links.show::before {
+    opacity: 1;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  .container {
+    width: 90%;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .container .link,
+  .container .div-wrapper {
+    position: relative;
+    width: 100%;
+    left: 0;
+    margin-bottom: 10px;
+  }
+
+  .skills-container {
+    gap: 20px;
+  }
+
+  .skill {
+    width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .typewriter h1 {
+    font-size: 24px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+
+  .certificados-icon-container {
+    flex-wrap: wrap;
+  }
+
+  .certificados-icon-container a {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .nav-links {
+    width: 100%;
+  }
+
+  .menu-toggle {
+    top: 0.5rem;
+    right: 0.5rem;
+  } 
+
+  header {
+    padding: 0.5rem;
+  }
+
+  .foto_projeto_tesla {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #25d366;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  
+}
+
+.whatsapp-button:hover {
+  background-color:#0056b3;
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+
+
+}
+
+.whatsapp-button:active {
+  background-color: #128c7e;
+  transform: scale(0.98);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-icon {
+  width: 20px;
+  height: 20px;
+  fill: white;
+  transition: transform 0.2s ease;
+
+}
+
+.whatsapp-text {
+  display: none; /* Esconde o texto para manter o botão pequeno */
+
+}
+
+.whatsapp-button:hover .whatsapp-icon {
+  transform: rotate(360deg);
+}
+
+
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .certificados-carousel div {
+    flex: 1 1 calc(50% - 1.5rem); /* Para tablets, cada item ocupa 50% da largura */
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+    
+  }
+}
+
+@media (max-width: 768px) {
+  .certificados-carousel div {
+    flex: 1 1 100%; /* Para smartphones, cada item ocupa 100% da largura */
+    margin-right: 0; /* Remove a margem direita */
+    margin-left: 0; /* Remove a margem esquerda */
+    margin-bottom: 1.5rem; /* Mantém a margem inferior */
+
+  }
+}
+
+@media (max-width: 480px) {
+  #certificados h2 {
+    font-size: 1.5rem; /* Menor tamanho de fonte para smartphones */
+    width: 100%; /* Largura total */
+    margin: 0 auto; /* Centraliza o título */ 
+
+  }
+
+  .certificados-carousel {
+    flex-direction: column; /* Coloca os carrossel em coluna */
+    align-items: center; /* Centraliza os carrossel */
+  }
+  
+
+  .certificados-icon-container {
+    flex-direction: column; /* Coloca os ícones em coluna */
+    align-items: center; /* Centraliza os ícones */
+  }
+  .certificados-icon-container a {
+    font-size: 3rem; /* Tamanho menor para smartphones */
+    margin: 0.5rem; /* Margem entre os ícones */
+  }
+
+  .certificado-link {
+    font-size: 0.9rem; /* Ajusta o tamanho da fonte do link */
+  }
+}
+
+
+@media (max-width: 320px) {
+  .certificados-icon-container a {
+    font-size: 2.5rem; /* Tamanho ainda menor para telas muito pequenas */
+  }
+  
+  .certificado-link {
+    font-size: 0.8rem; /* Ajusta o tamanho da fonte do link */
+  }
+}

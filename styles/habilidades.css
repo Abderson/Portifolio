@@ -1,0 +1,258 @@
+/* Skills Section with Carousel */
+#habilidades {
+  padding: clamp(2rem, 5vh, 4rem) clamp(1rem, 3vw, 2rem);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#habilidades h2 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  margin-bottom: clamp(1rem, 4vh, 2rem);
+  color: var(--text-light);
+  position: relative;
+  z-index: 2;
+}
+
+/* Main carousel container */
+.skills-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  padding: clamp(0.5rem, 2vh, 1rem) 0;
+}
+
+/* Gradient overlays for smooth transitions at edges */
+.skills-container::before,
+.skills-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: clamp(30px, 10vw, 80px);
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.skills-container::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.8), transparent);
+}
+
+.skills-container::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(0,0,0,0.8), transparent);
+}
+
+/* Wrapper for sliding animation */
+.skills-wrapper {
+  display: flex;
+  animation: scroll-skills 30s linear infinite;
+  transition: animation-play-state 0.5s ease;
+  width: fit-content;
+}
+
+/* Pause animation on hover */
+.skills-container:hover .skills-wrapper {
+  animation-play-state: paused;
+}
+
+/* Improved animation */
+@keyframes scroll-skills {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Adjusts based on the total width of all skills */
+    transform: translateX(calc(-100% / 2));
+  }
+}
+
+/* Individual skill item */
+.skill {
+  flex: 0 0 auto;
+  width: clamp(90px, 20vw, 120px);
+  padding: clamp(0.5rem, 2vw, 1rem);
+  margin: 0 clamp(0.5rem, 1.5vw, 1.5rem);
+  text-align: center;
+  transition: all var(--transition-speed) ease;
+  position: relative;
+  border-radius: var(--border-radius);
+}
+
+.skill:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+/* Skill icon */
+.skill-icon {
+  font-size: clamp(1.5rem, 6vw, 2.5rem);
+  color: var(--primary-color);
+  margin-bottom: clamp(0.5rem, 2vh, 1rem);
+  transition: transform var(--transition-speed) ease, 
+              color var(--transition-speed) ease;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: clamp(50px, 10vw, 70px);
+  height: clamp(50px, 10vw, 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.skill:hover .skill-icon {
+  transform: scale(1.2);
+  color: var(--accent-color);
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* Skill title */
+.skill h3 {
+  font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+  color: var(--text-light);
+  transition: color var(--transition-speed) ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.skill:hover h3 {
+  color: var(--primary-color);
+}
+
+/* Clone the items for infinite scroll effect */
+.skills-wrapper .skill:nth-child(n+10) {
+  display: none;
+}
+
+.cloned-skills {
+  display: flex;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .skills-container {
+    padding: 0.5rem 0;
+  }
+  
+  @keyframes scroll-skills {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100% / 2.2));
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-wrapper {
+    animation-duration: 25s;
+  }
+  
+  .skill {
+    width: clamp(80px, 25vw, 100px);
+    margin: 0 clamp(0.3rem, 1vw, 0.8rem);
+  }
+  
+  .skill-icon {
+    width: clamp(40px, 12vw, 60px);
+    height: clamp(40px, 12vw, 60px);
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-wrapper {
+    animation-duration: 20s;
+  }
+  
+  .skill {
+    width: clamp(70px, 30vw, 90px);
+    margin: 0 clamp(0.2rem, 0.5vw, 0.5rem);
+  }
+  
+  .skill-icon {
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
+  }
+  
+  .skills-container::before,
+  .skills-container::after {
+    width: clamp(20px, 8vw, 40px);
+  }
+}
+
+/* For reduced motion preferences */
+@media (prefers-reduced-motion) {
+  .skills-wrapper {
+    animation: none;
+  }
+  
+  .skills-container {
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) transparent;
+  }
+  
+  .skills-container::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .skills-container::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+  }
+  
+  .skills-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+/* JavaScript enabled enhancements */
+.skills-nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 10px;
+}
+
+.skills-nav button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-speed) ease;
+}
+
+.skills-nav button:hover {
+  background: var(--primary-dark);
+  transform: scale(1.1);
+}
+
+.skills-nav button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Additional improvements for touch devices */
+@media (hover: none) {
+  .skills-container:hover .skills-wrapper {
+    animation-play-state: running;
+  }
+  
+  .skill:active {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}

@@ -1,0 +1,179 @@
+/* Sobre.css - Estilo profissional e responsivo para a seção Sobre */
+
+.sobre-section {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 80px 24px 40px 24px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.sobre-section h2 {
+  font-size: 2.5rem;
+  color: #61dafb;
+  margin-bottom: 2rem;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.sobre-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.foto_perfil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.foto_escritorio {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20%;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  border: 4px solid #61dafb;
+  transition: transform 0.3s ease;
+}
+
+.foto_escritorio:hover {
+  transform: scale(1.05);
+}
+
+.texto_container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.texto_sobre_min {
+  text-align: justify;
+  line-height: 1.8;
+  color: #61dafb;
+  margin-bottom: 32px;
+  font-size: 1.2rem;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  max-width: 600px;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 1024px) {
+  .sobre-section {
+    padding: 60px 20px 40px 20px;
+  }
+  
+  .sobre-content {
+    gap: 40px;
+  }
+  
+  .foto_escritorio {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .texto_sobre_min {
+    font-size: 1.1rem;
+  }
+}
+
+/* Responsividade para tablets pequenos */
+@media (max-width: 900px) {
+  .sobre-section {
+    padding: 40px 16px 30px 16px;
+    min-height: 60vh;
+  }
+  
+  .sobre-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .sobre-content {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .foto_escritorio {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .texto_container {
+    padding: 0 10px;
+  }
+  
+  .texto_sobre_min {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 100%;
+  }
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+  .sobre-section {
+    padding: 30px 12px 20px 12px;
+  }
+  
+  .sobre-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .sobre-content {
+    gap: 20px;
+  }
+  
+  .foto_escritorio {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .texto_sobre_min {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding: 0 5px;
+  }
+}
+
+/* Responsividade para mobile pequeno */
+@media (max-width: 480px) {
+  .sobre-section {
+    padding: 20px 8px 15px 8px;
+  }
+  
+  .sobre-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .foto_escritorio {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .texto_sobre_min {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}

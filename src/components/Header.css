@@ -1,0 +1,281 @@
+/* Header.css - Estilo responsivo para o cabeçalho */
+
+header.header {
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px 20px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  box-sizing: border-box;
+  background-attachment: fixed;
+}
+
+.typewriter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+}
+
+header.header h1 {
+  color: #fff !important;
+  font-size: 3.5rem;
+  margin: 0.5rem 0;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  text-align: center;
+  word-break: break-word;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+  color: #61dafb;
+  font-weight: 300;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+header.header p {
+  font-size: 1.4rem;
+  max-width: 700px;
+  text-align: center;
+  margin: 0;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  word-break: break-word;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+.botao_projetos {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.botao_projetos button {
+  background: linear-gradient(135deg, #61dafb 0%, #21a1f3 100%);
+  color: #fff;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(97,218,251,0.3);
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.botao_projetos button:hover {
+  background: linear-gradient(135deg, #21a1f3 0%, #61dafb 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(97,218,251,0.4);
+}
+
+.botao_projetos button:active {
+  transform: translateY(-1px);
+}
+
+/* Responsividade para tablets grandes */
+@media (max-width: 1200px) {
+  header.header {
+    min-height: 90vh;
+    padding: 70px 18px 35px 18px;
+  }
+  
+  header.header h1 {
+    font-size: 3rem;
+  }
+  
+  header.header p {
+    font-size: 1.3rem;
+  }
+  
+  .typewriter {
+    gap: 1.8rem;
+    max-width: 700px;
+  }
+  
+  .botao_projetos button {
+    padding: 0.9rem 2.2rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* Responsividade para tablets */
+@media (max-width: 1024px) {
+  header.header {
+    min-height: 80vh;
+    padding: 60px 15px 30px 15px;
+  }
+  
+  header.header h1 {
+    font-size: 2.8rem;
+  }
+  
+  header.header p {
+    font-size: 1.2rem;
+  }
+  
+  .typewriter {
+    gap: 1.6rem;
+    max-width: 650px;
+  }
+  
+  .botao_projetos button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* Responsividade para tablets pequenos */
+@media (max-width: 900px) {
+  header.header {
+    min-height: 70vh;
+    padding: 50px 12px 25px 12px;
+  }
+  
+  header.header h1 {
+    font-size: 2.5rem;
+  }
+  
+  header.header p {
+    font-size: 1.1rem;
+  }
+  
+  .typewriter {
+    gap: 1.4rem;
+    max-width: 600px;
+  }
+  
+  .botao_projetos button {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+  header.header {
+    min-height: 60vh;
+    padding: 40px 10px 20px 10px;
+  }
+  
+  header.header h1 {
+    font-size: 2.2rem;
+  }
+  
+  header.header p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+  
+  .typewriter {
+    gap: 1.2rem;
+    max-width: 100%;
+  }
+  
+  .botao_projetos button {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Responsividade para mobile pequeno */
+@media (max-width: 600px) {
+  header.header {
+    min-height: 50vh;
+    padding: 30px 8px 15px 8px;
+  }
+  
+  header.header h1 {
+    font-size: 1.8rem;
+  }
+  
+  header.header p {
+    font-size: 0.95rem;
+    padding: 0 8px;
+  }
+  
+  .typewriter {
+    gap: 1rem;
+  }
+  
+  .botao_projetos button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Responsividade para mobile muito pequeno */
+@media (max-width: 480px) {
+  header.header {
+    min-height: 45vh;
+    padding: 25px 6px 12px 6px;
+  }
+  
+  header.header h1 {
+    font-size: 1.5rem;
+  }
+  
+  header.header p {
+    font-size: 0.9rem;
+    padding: 0 6px;
+  }
+  
+  .typewriter {
+    gap: 0.8rem;
+  }
+  
+  .botao_projetos button {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Responsividade para mobile extra pequeno */
+@media (max-width: 360px) {
+  header.header {
+    min-height: 40vh;
+    padding: 20px 4px 10px 4px;
+  }
+  
+  header.header h1 {
+    font-size: 1.3rem;
+  }
+  
+  header.header p {
+    font-size: 0.85rem;
+    padding: 0 4px;
+  }
+  
+  .typewriter {
+    gap: 0.6rem;
+  }
+  
+  .botao_projetos button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,13 @@
+/* Arquivo CSS inicial para o React */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #000;
+  padding-top: 60px; /* Espaço para o menu fixo */
+  box-sizing: border-box;
+}
+
+/* Rolagem suave para links de âncora (#id) */
+html {
+  scroll-behavior: smooth;
+}

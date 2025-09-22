@@ -322,6 +322,7 @@
   
   .carousel-track {
     gap: 1rem;
+    animation-duration: 10s /* Mais rápido no mobile */
   }
   
   .card-projeto {
@@ -378,8 +379,18 @@
   .card-projeto {
     width: 250px;
     min-width: 250px;
+    padding: 0.8rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(97,218,251,0.15);
+    border: 1.5px solid #61dafb;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
-  
+
+  .card-projeto:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(97,218,251,0.2);
+  }
+
   .card-img-wrapper {
     height: 140px;
   }

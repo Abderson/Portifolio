@@ -48,7 +48,7 @@
   display: flex;
   animation: scroll 30s linear infinite;
   gap: 2rem;
-  width: calc(200% + 2rem); /* 200% porque duplicamos os projetos */
+  width: calc(200% + 2rem);
 }
 
 .carousel-track:hover {
@@ -322,7 +322,8 @@
   
   .carousel-track {
     gap: 1rem;
-    animation-duration: 10s /* Mais rápido no mobile */
+    animation-duration: 20s;
+    width: calc(12 * 80vw + 11rem); /* 12 cards (6 projetos duplicados), cada com 80vw de largura + gaps */
   }
   
   .card-projeto {
@@ -432,4 +433,10 @@
     width: 35px;
     height: 35px;
   }
+
+  .carousel-track {
+    gap: 0.8rem;
+    animation-duration: 30s;
+    width: calc(12 * 70vw + 11rem); /* 12 cards (6 projetos duplicados), cada com 70vw de largura + gaps */
+}
 }

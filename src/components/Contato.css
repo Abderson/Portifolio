@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Quicksand:wght@500&display=swap');
 section {
-  background: #000 !important;
+  background: var(--bg-primary) !important;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -10,15 +10,18 @@ section {
   z-index: 1;
   margin-top: 50px;
   margin-bottom: 50px;
+  transition: background-color 0.3s ease;
 }
 
 .App-contato {
-  background: #000 !important;
+  background: var(--bg-card) !important;
   max-width: 600px;
   margin: 60px auto 0 auto;
   border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(97,218,251,0.12);
+  box-shadow: var(--shadow-medium);
   padding: 50px 40px;
+  border: 1px solid var(--border-secondary);
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,19 +33,20 @@ section {
 }
 
 .App-contato:hover {
-  box-shadow: 0 12px 40px rgba(97,218,251,0.18);
+  box-shadow: var(--shadow-heavy);
   transform: translateY(-2px);
 }
 
 .App-contato h2 {
   font-size: 2.5rem;
-  color: #61dafb;
+  color: var(--accent-primary);
   margin-bottom: 2.5rem;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-weight: 700;
   letter-spacing: 2px;
   text-shadow: 1px 1px 8px rgba(0,0,0,0.08);
   text-align: center;
+  transition: color 0.3s ease;
 }
 
 form {

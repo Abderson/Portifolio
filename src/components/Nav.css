@@ -8,24 +8,69 @@
   top: 0; /* Alinha no topo */
   left: 0; /* Alinha à esquerda */
   width: 100%; /* Ocupa toda a largura */
-  background: #222; /* Cor de fundo escura */
-  color: #fff; /* Cor do texto branca */
+  background: var(--bg-nav); /* Cor de fundo usando variável do tema */
+  color: var(--text-primary); /* Cor do texto usando variável do tema */
   display: flex; /* Layout flexível */
   align-items: center; /* Centraliza verticalmente */
   justify-content: space-between; /* Espaço entre logo e links */
   padding: 0.5rem 2rem; /* Espaçamento interno */
   z-index: 1000; /* Sobrepõe outros elementos */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Sombra sutil */
+  box-shadow: var(--shadow-light); /* Sombra usando variável do tema */
   min-height: 60px; /* Altura mínima */
+  backdrop-filter: blur(10px); /* Efeito de desfoque */
+  border-bottom: 1px solid var(--border-secondary); /* Borda inferior */
+  transition: all 0.3s ease; /* Transição suave */
 }
 
 .logo { /* Estilo do nome ou logo */
   font-size: 2rem; /* Tamanho da fonte */
   font-family: 'Pacifico', cursive; /* Fonte estilizada */
-  color: #61dafb; /* Cor azul clara */
+  color: var(--accent-primary); /* Cor usando variável do tema */
   font-weight: 400; /* Peso da fonte */
   letter-spacing: 2px; /* Espaçamento entre letras */
   text-shadow: 1px 1px 6px rgba(0,0,0,0.12); /* Sombra do texto */
+  transition: color 0.3s ease; /* Transição suave */
+}
+
+.nav-controls { /* Container dos controles (tema + menu) */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Botão de alternar tema simples */
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--accent-primary, #f5c518);
+  transition: color 0.3s;
+  outline: none;
+  margin-right: 0.5rem;
+}
+
+/* Ícones específicos para cada tema */
+.theme-toggle .fa-sun {
+  color: #ffd700; /* Dourado para o sol */
+}
+
+.theme-toggle .fa-moon {
+  color: #c0c0c0; /* Prateado para a lua */
+}
+
+.theme-toggle:hover {
+  background-color: var(--accent-primary);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-accent);
+}
+
+.theme-toggle:hover .fa-sun {
+  color: #ffffff; /* Branco no hover */
+}
+
+.theme-toggle:hover .fa-moon {
+  color: #ffffff; /* Branco no hover */
 }
 
 
@@ -49,17 +94,24 @@
   z-index: 1050; /* Sobrepõe conteúdo */
 }
 
-.nav-links li a { /* Estilo dos links */
-  color: #fff; /* Cor branca */
+.nav-links li a, /* Estilo dos links */
+.nav-links li .nav-link { /* Estilo dos links com classe */
+  color: var(--text-primary); /* Cor usando variável do tema */
   text-decoration: none; /* Sem sublinhado */
   font-size: 1rem; /* Tamanho da fonte */
-  transition: color 0.2s; /* Transição de cor */
+  transition: all 0.3s ease; /* Transição suave */
   padding: 0.5rem 3rem; /* Espaçamento interno */
+  border-radius: 6px; /* Cantos arredondados */
+  position: relative; /* Para efeitos */
 }
 
 .nav-links li a:hover, /* Hover e ativo */
-.nav-links li a.active {
-  color: #61dafb; /* Cor azul clara ao passar o mouse ou ativo */
+.nav-links li a.active,
+.nav-links li .nav-link:hover, /* Hover para links com classe */
+.nav-links li .nav-link.active {
+  color: var(--accent-primary); /* Cor usando variável do tema */
+  background: var(--bg-tertiary); /* Fundo sutil */
+  transform: translateY(-2px); /* Elevação sutil */
 }
 
 
@@ -85,6 +137,15 @@
 }
 
 @media (max-width: 768px) { /* Ajustes para mobile */
+  .nav-controls {
+    order: 2;
+  }
+  
+  .theme-toggle {
+    font-size: 1.3rem;
+    padding: 0.4rem;
+  }
+  
   .menu-toggle {
     display: block; /* Mostra o botão */
     margin-right: 10px; /* Espaço à direita */
@@ -97,11 +158,12 @@
     right: -320px; /* Esconde fora da tela */
     height: 100vh; /* Altura total da tela */
     width: 200px; /* Largura do menu */
-    background: #222; /* Fundo escuro */
+    background: var(--bg-nav); /* Fundo usando variável do tema */
     flex-direction: column; /* Coluna */
     gap: 2rem; /* Espaço entre links */
     padding: 4rem 1rem 1rem 1rem; /* Espaçamento interno */
-    box-shadow: -2px 0 8px rgba(0,0,0,0.15); /* Sombra lateral */
+    box-shadow: var(--shadow-medium); /* Sombra usando variável do tema */
+    border-left: 1px solid var(--border-secondary); /* Borda lateral */
     transition: right 0.3s cubic-bezier(.77,0,.18,1); /* Animação */
     display: flex; /* Flex layout */
     align-items: flex-start; /* Alinha à esquerda */
@@ -122,8 +184,8 @@
   }
   .nav-links li a:hover,
   .nav-links li a.active {
-    background: #333; /* Fundo ao passar o mouse */
-    color: #61dafb; /* Azul claro */
+    background: var(--bg-tertiary); /* Fundo usando variável do tema */
+    color: var(--accent-primary); /* Cor usando variável do tema */
   }
   body {
     padding-top: 60px; /* Espaço para o menu fixo */

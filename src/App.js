@@ -7,6 +7,7 @@ import Stack from './components/stack';
 import Projetos from './components/Projetos';
 import Footer from  './components/Footer';
 import Contato from './components/Contato';
+import Certificados from './pages/Certificados';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -23,6 +24,7 @@ function App() {
       <Sobre />
       <Stack />
       <Projetos />
+      <Certificados />
       <Contato />
       <Footer />
     </div>

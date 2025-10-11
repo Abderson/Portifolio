@@ -12,9 +12,10 @@ function Sobre() {
         </div>
         <div className="texto_container" data-aos="fade-left">
           <p className="texto_sobre_min">
-            Sou um profissional em transição de carreira para a área de desenvolvimento de software, atualmente cursando Análise e Desenvolvimento de Sistemas.<br />
-            Tenho experiência sólida em HTML, CSS e JavaScript, além de uma base em lógica de programação e boas práticas de desenvolvimento web.<br />
-            Motivado por desafios, busco oportunidades para criar soluções eficientes e inovadoras, sempre comprometido com aprendizado contínuo e evolução técnica.
+            Sou um profissional em transição de carreira para a área de Desenvolvimento de Software, atualmente cursando <span>Análise e Desenvolvimento de Sistemas.</span><br></br>
+            Domino tecnologias como <span>HTML</span>, <span>CSS</span>, <span>JavaScript</span>, <span>TypeScript</span>, <span>React</span>, <span>Node.js</span> e <span>Git/GitHub</span>, além de possuir uma base sólida em lógica de programação, boas práticas de desenvolvimento web e versionamento de código.
+            Tenho um perfil analítico e colaborativo, com foco em entregar soluções eficientes, seguras e de fácil manutenção.<br></br>
+            Sou movido por desafios e estou sempre em busca de aprimorar minhas habilidades, explorar novas ferramentas e contribuir com projetos que unam inovação e propósito.
           </p>
         </div>
       </div>

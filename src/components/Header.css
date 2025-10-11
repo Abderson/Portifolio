@@ -8,12 +8,14 @@ header.header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--text-primary);
+  background: var(--bg-primary);
   position: relative;
   z-index: 1;
   text-shadow: 0 2px 8px rgba(0,0,0,0.7);
   box-sizing: border-box;
   background-attachment: fixed;
+  transition: all 0.3s ease;
 }
 
 .typewriter {
@@ -27,7 +29,7 @@ header.header {
 }
 
 header.header h1 {
-  color: #fff !important;
+  color: var(--text-primary) !important;
   font-size: 3.5rem;
   margin: 0.5rem 0;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;

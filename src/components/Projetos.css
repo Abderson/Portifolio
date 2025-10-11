@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 #projetos {
-  background: #000;
+  background: var(--bg-primary);
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -10,20 +10,22 @@
   z-index: 1;
   margin-top: 50px;
   margin-bottom: 50px;
+  transition: all 0.3s ease;
 }
 .cards-projetos {
   padding: 60px 20px;
-    background: #000;
+  background: var(--bg-primary);
   width: 100%;
   box-sizing: border-box;
   position: relative;
   z-index: 1;
+  transition: all 0.3s ease;
 }
 
 .projetos-section-title {
   font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
   font-size: 3rem;
-  color: #61dafb;
+  color: var(--accent-primary);
   letter-spacing: 2px;
   text-transform: uppercase;
   text-align: center;
@@ -34,6 +36,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: color 0.3s ease;
 }
 
 /* Carrossel infinito */
@@ -56,7 +59,7 @@
 }
 
 .card-content {
-  color: #61dafb;
+  color: var(--card-text);
   text-align: center;
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-weight: 400;
@@ -65,6 +68,11 @@
   letter-spacing: 1px;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.12);
   width: 100%;
+  transition: color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 @keyframes scroll {
@@ -86,31 +94,88 @@
 }
 
 .card-projeto {
-  background: #000;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(97,218,251,0.2);
-  width: 350px;
-  min-width: 350px; /* Evita que os cards encolham */
+  background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(97,218,251,0.15), 0 2px 8px rgba(0,0,0,0.3);
+  width: 380px;
+  min-width: 380px;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
-  border: 2px solid #61dafb;
-  flex-shrink: 0; /* Impede que os cards encolham */
+  border: 1px solid rgba(97,218,251,0.2);
+  flex-shrink: 0;
+  position: relative;
+  backdrop-filter: blur(10px);
+  animation: cardEntrance 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.card-projeto:nth-child(1) { animation-delay: 0.1s; }
+.card-projeto:nth-child(2) { animation-delay: 0.2s; }
+.card-projeto:nth-child(3) { animation-delay: 0.3s; }
+.card-projeto:nth-child(4) { animation-delay: 0.4s; }
+.card-projeto:nth-child(5) { animation-delay: 0.5s; }
+.card-projeto:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .card-projeto:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(97,218,251,0.25), 0 8px 16px rgba(0,0,0,0.4);
+  border-color: rgba(97,218,251,0.4);
+}
+
+.card-projeto::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #61dafb, #21a1f3, #61dafb);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-projeto:hover::before {
+  opacity: 1;
 }
 
 .card-img-wrapper {
   width: 100%;
-  height: 200px;
+  height: 220px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #000;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  position: relative;
+}
+
+.card-img-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 0%, rgba(97,218,251,0.1) 50%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-projeto:hover .card-img-wrapper::after {
+  opacity: 1;
 }
 
 .card-img {
@@ -125,28 +190,75 @@
 }
 
 .card-content {
-  padding: 1.5rem;
+  padding: 2rem 1.5rem 1.5rem;
+  position: relative;
 }
 
 .card-title {
-  font-size: 1.4rem;
-  margin-bottom: 0.8rem;
-  color: #61dafb;
-  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .card-descricao {
-  font-size: 1rem;
+  
+  text-align: center;
+  font-size: 0.95rem;
   color: #61dafb;
   margin-bottom: 1rem;
-  line-height: 1.5;
+  line-height: 1.4;
+  height: 2.8rem; /* Altura fixa para 2 linhas */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
 }
 
 .card-tecnologias {
-  font-size: 0.9rem;
-  color: #61dafb;
+  text-align: center;
   margin-bottom: 1.2rem;
-  font-weight: 500;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+.tech-badge {
+  background: rgba(97, 218, 251, 0.15);
+  color: #61dafb;
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid rgba(97, 218, 251, 0.3);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.tech-badge.more {
+  background: rgba(97, 218, 251, 0.25);
+  color: #ffffff;
+  border-color: rgba(97, 218, 251, 0.5);
+}
+
+.tech-badge:hover {
+  background: rgba(97, 218, 251, 0.25);
+  border-color: rgba(97, 218, 251, 0.5);
+  transform: translateY(-1px);
 }
 
 .card-links {
@@ -161,21 +273,40 @@
 .btn-projeto {
   background: linear-gradient(135deg, #61dafb 0%, #21a1f3 100%);
   color: #fff;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
   font-size: 0.9rem;
   text-align: center;
   flex: 1;
-  min-width: 100px;
+  min-width: 110px;
+  border: 1px solid rgba(97, 218, 251, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-projeto:hover {
   background: linear-gradient(135deg, #21a1f3 0%, #61dafb 100%);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(33,161,243,0.3);
+  box-shadow: 0 6px 16px rgba(33,161,243,0.4);
+  border-color: rgba(97, 218, 251, 0.6);
+}
+
+.btn-projeto::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-projeto:hover::before {
+  left: 100%;
 }
 
 .modal-projetos {
@@ -344,7 +475,17 @@
   }
   
   .card-descricao {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    height: 2.5rem;
+  }
+  
+  .card-tecnologias {
+    height: 2.2rem;
+  }
+  
+  .tech-badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
   }
   
   .card-links {
@@ -405,11 +546,17 @@
   }
   
   .card-descricao {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    height: 2.2rem;
   }
   
   .card-tecnologias {
-    font-size: 0.85rem;
+    height: 2rem;
+  }
+  
+  .tech-badge {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.4rem;
   }
   
   .btn-projeto {
@@ -438,5 +585,61 @@
     gap: 0.8rem;
     animation-duration: 30s;
     width: calc(12 * 70vw + 11rem); /* 12 cards (6 projetos duplicados), cada com 70vw de largura + gaps */
+  }
 }
+
+/* Botão para certificados */
+.certificados-cta {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem 0;
+}
+
+.btn-certificados {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+  color: var(--text-inverse);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: var(--shadow-accent);
+  border: 1px solid var(--border-primary);
+}
+
+.btn-certificados:hover {
+  background: linear-gradient(45deg, var(--accent-secondary), var(--accent-primary));
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-heavy);
+  border-color: var(--border-hover);
+}
+
+.btn-certificados i {
+  font-size: 1.2rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Responsividade do botão */
+@media (max-width: 768px) {
+  .certificados-cta {
+    margin-top: 2rem;
+    padding: 1.5rem 0;
+  }
+  
+  .btn-certificados {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
 }

@@ -1,10 +1,132 @@
+/* ============ SISTEMA DE TEMAS PROFISSIONAL ============ */
+
+/* Tema Escuro (Padrão) */
+.dark-theme {
+  /* Backgrounds */
+  --bg-primary: #000000;
+  --bg-secondary: #111111;
+  --bg-tertiary: rgba(255, 255, 255, 0.05);
+  --bg-card: rgba(255, 255, 255, 0.08);
+  --bg-nav: #222222;
+  
+  /* Textos */
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --text-muted: #999999;
+  --text-inverse: #000000;
+  
+  /* Cores de destaque */
+  --accent-primary: #61dafb;
+  --accent-secondary: #21a1c4;
+  --accent-hover: #4fc3f7;
+  
+  /* Bordas e divisores */
+  --border-primary: rgba(97, 218, 251, 0.2);
+  --border-secondary: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(97, 218, 251, 0.4);
+  
+  /* Sombras */
+  --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-medium: 0 4px 15px rgba(0, 0, 0, 0.4);
+  --shadow-heavy: 0 8px 25px rgba(0, 0, 0, 0.5);
+  --shadow-accent: 0 4px 15px rgba(97, 218, 251, 0.3);
+  
+  /* Estados */
+  --success: #4caf50;
+  --warning: #ff9800;
+  --error: #f44336;
+  --info: #2196f3;
+}
+
+/* Tema Claro */
+.light-theme {
+  /* Backgrounds */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e9ecef;
+  --bg-card: #ffffff;
+  --bg-nav: #ffffff;
+  
+  /* Textos */
+  --text-primary: #2c3e50;
+  --text-secondary: #5a6c7d;
+  --text-muted: #95a5a6;
+  --text-inverse: #ffffff;
+  
+  /* Cores de destaque */
+  --accent-primary: #3498db;
+  --accent-secondary: #2980b9;
+  --accent-hover: #5dade2;
+  
+  /* Bordas e divisores */
+  --border-primary: rgba(52, 152, 219, 0.3);
+  --border-secondary: #dee2e6;
+  --border-hover: rgba(52, 152, 219, 0.5);
+  
+  /* Sombras */
+  --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 15px rgba(0, 0, 0, 0.15);
+  --shadow-heavy: 0 8px 25px rgba(0, 0, 0, 0.2);
+  --shadow-accent: 0 4px 15px rgba(52, 152, 219, 0.2);
+  
+  /* Estados */
+  --success: #27ae60;
+  --warning: #f39c12;
+  --error: #e74c3c;
+  --info: #3498db;
+}
+
 /* Arquivo CSS inicial para o React */
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #000;
-  padding-top: 60px; /* Espaço para o menu fixo */
-  box-sizing: border-box;
+  padding: 0;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+body.dark {
+  --background: #181818;
+  --text-color: #f5f5f5;
+  --card-bg: #222;
+  --card-text: #fff;
+  --footer-bg: #111;
+  --footer-text: #ccc;
+}
+
+body.light {
+  --background: #f5f5f5;
+  --text-color: #181818;
+  --card-bg: #fff;
+  --card-text: #222;
+  --footer-bg: #eaeaea;
+  --footer-text: #222;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-color);
+}
+
+/* Estilos globais para transições suaves */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Scrollbar personalizada para tema */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-hover);
 }
 
 /* Rolagem suave para links de âncora (#id) */

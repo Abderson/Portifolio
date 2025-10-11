@@ -1,0 +1,329 @@
+/* ThemeSelector.css - Seletor avançado de temas */
+
+.theme-selector {
+  position: relative;
+  display: inline-block;
+}
+
+/* Toggle simples */
+.theme-toggle-simple {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle-simple:hover {
+  transform: scale(1.05);
+}
+
+.theme-toggle-simple:focus {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+.toggle-track {
+  width: 60px;
+  height: 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 15px;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle-simple.dark .toggle-track {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+.theme-toggle-simple.light .toggle-track {
+  background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+}
+
+.toggle-thumb {
+  width: 26px;
+  height: 26px;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle-simple.dark .toggle-thumb {
+  transform: translateX(30px);
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.theme-toggle-simple.light .toggle-thumb {
+  transform: translateX(0);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.toggle-icon {
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+/* Seletor avançado */
+.theme-selector-trigger {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 120px;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.theme-selector-trigger:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--border-hover);
+}
+
+.theme-selector-trigger:focus {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+.current-theme-icon {
+  font-size: 1.2rem;
+}
+
+.current-theme-label {
+  font-weight: 500;
+  flex: 1;
+  text-align: left;
+}
+
+.dropdown-arrow {
+  font-size: 0.8rem;
+  transition: transform 0.2s ease;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+/* Dropdown */
+.theme-selector-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 8px;
+  box-shadow: var(--shadow-heavy);
+  z-index: 1000;
+  margin-top: 0.25rem;
+  min-width: 250px;
+  overflow: hidden;
+}
+
+.theme-selector-header {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-secondary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.theme-selector-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.close-dropdown {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.close-dropdown:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+/* Opções de tema */
+.theme-options {
+  padding: 0.5rem;
+}
+
+.theme-option {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: left;
+  transition: all 0.2s ease;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+}
+
+.theme-option:hover {
+  background: var(--bg-tertiary);
+}
+
+.theme-option.selected {
+  background: var(--accent-primary);
+  color: #ffffff;
+}
+
+.theme-option:focus {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+.theme-icon {
+  font-size: 1.5rem;
+  width: 24px;
+  text-align: center;
+}
+
+.theme-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.theme-label {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.theme-description {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.selected-indicator {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Informações do tema do sistema */
+.system-theme-info {
+  padding: 0.75rem 1rem;
+  background: var(--bg-tertiary);
+  border-top: 1px solid var(--border-secondary);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.system-theme-info p {
+  margin: 0.25rem 0;
+}
+
+.system-hint {
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* Overlay */
+.theme-selector-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background: transparent;
+}
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .theme-selector-dropdown {
+    min-width: 200px;
+  }
+  
+  .theme-selector-trigger {
+    min-width: 100px;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .current-theme-label {
+    display: none;
+  }
+}
+
+/* Animações */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.theme-selector-dropdown {
+  animation: slideDown 0.2s ease;
+}
+
+/* Dark mode específico */
+[data-theme="dark"] .theme-selector-trigger {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .theme-selector-trigger:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Light mode específico */
+[data-theme="light"] .theme-selector-trigger {
+  background: rgba(0, 0, 0, 0.02);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .theme-selector-trigger:hover {
+  background: rgba(0, 0, 0, 0.05);
+}

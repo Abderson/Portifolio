@@ -56,21 +56,21 @@ const SchemaMarkup: React.FC<SchemaMarkupExtendedProps> = ({ type = 'Person', da
     "inLanguage": "pt-BR"
   });
 
-  const getProjectSchema = (project: Project) => ({
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    "name": project.titulo,
-    "description": project.descricao,
-    "author": {
-      "@type": "Person",
-      "name": "Anderson Ferreira"
-    },
-    "url": project.demo !== "#" ? project.demo : window.location.href,
-    "image": `${window.location.origin}${project.imagem}`,
-    "genre": "Software Application",
-    "programmingLanguage": project.tecnologias,
-    "codeRepository": project.github !== "#" ? project.github : undefined
-  });
+  // const getProjectSchema = (project: Project) => ({
+  //   "@context": "https://schema.org",
+  //   "@type": "CreativeWork",
+  //   "name": project.titulo,
+  //   "description": project.descricao,
+  //   "author": {
+  //     "@type": "Person",
+  //     "name": "Anderson Ferreira"
+  //   },
+  //   "url": project.demo !== "#" ? project.demo : window.location.href,
+  //   "image": `${window.location.origin}${project.imagem}`,
+  //   "genre": "Software Application",
+  //   "programmingLanguage": project.tecnologias,
+  //   "codeRepository": project.github !== "#" ? project.github : undefined
+  // });
 
   const getSchema = () => {
     switch (type) {

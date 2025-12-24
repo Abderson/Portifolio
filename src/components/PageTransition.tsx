@@ -1,5 +1,4 @@
 import React, { useState, useEffect, ReactNode } from 'react';
-import { useLocation } from 'react-router-dom';
 import './PageTransition.css';
 
 interface PageTransitionProps {
@@ -9,7 +8,6 @@ interface PageTransitionProps {
 const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
   const [displayChildren, setDisplayChildren] = useState<ReactNode>(children);
-  const location = useLocation();
 
   useEffect(() => {
     if (children !== displayChildren) {

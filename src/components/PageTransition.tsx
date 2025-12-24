@@ -1,16 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, ReactNode } from 'react';
 import { useLocation } from 'react-router-dom';
 import './PageTransition.css';
 
-const PageTransition = ({ children }) => {
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [displayChildren, setDisplayChildren] = useState(children);
+interface PageTransitionProps {
+  children: ReactNode;
+}
+
+const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
+  const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
+  const [displayChildren, setDisplayChildren] = useState<ReactNode>(children);
   const location = useLocation();
 
   useEffect(() => {
     if (children !== displayChildren) {
       setIsTransitioning(true);
-      
+
       const timer = setTimeout(() => {
         setDisplayChildren(children);
         setIsTransitioning(false);

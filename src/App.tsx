@@ -3,16 +3,16 @@ import './App.css';
 import Header from './components/Header';
 import Nav from './components/Nav';
 import Sobre from './components/Sobre';
-import Stack from './components/stack';
+import Stack from './components/Stack';
 import Projetos from './components/Projetos';
-import Footer from  './components/Footer';
+import Footer from './components/Footer';
 import Contato from './components/Contato';
 import Certificados from './pages/Certificados';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-function App() {
+const App: React.FC = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
@@ -29,6 +29,6 @@ function App() {
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

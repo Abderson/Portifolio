@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+#habilidades {
+    margin-top: 50px;
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--bg-primary);
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.stack-section-title {
+    font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+    color: var(--accent-primary);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2rem;
+    transition: color 0.3s ease;
+    font-weight: 400;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill-icon {
+    margin: 0 auto 0.5rem auto;
+    font-size: 3rem;
+    color: #61dafb;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.skill-icon:hover {
+    transform: scale(1.1);
+    color: #21a1f3;
+}
+
+/* Estilos para o carrossel */
+.slick-slider {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.slick-slide {
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.slick-slide > div {
+    text-align: center;
+    padding: 20px 10px;
+    background: #000;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 5px;
+}
+
+.slick-slide > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.slick-dots {
+    bottom: -50px;
+}
+
+.slick-dots li button:before {
+    font-size: 12px;
+    color: #61dafb;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #21a1f3;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 1024px) {
+    #habilidades {
+        padding: 30px 15px;
+    }
+    
+    .stack-section-title {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .skill-icon {
+        font-size: 2.5rem;
+    }
+    
+    .slick-slide > div {
+        padding: 15px 8px;
+    }
+}
+
+/* Responsividade para tablets pequenos */
+@media (max-width: 900px) {
+    #habilidades {
+        padding: 25px 12px;
+    }
+    
+    .stack-section-title {
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+    }
+    
+    .skill-icon {
+        font-size: 2.2rem;
+    }
+    
+    .slick-slide > div {
+        padding: 12px 6px;
+        margin: 0 3px;
+    }
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+    #habilidades {
+        padding: 20px 10px;
+        margin-top: 30px;
+    }
+    
+    .stack-section-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .skill-icon {
+        font-size: 2rem;
+    }
+    
+    .slick-slide > div {
+        padding: 10px 5px;
+        margin: 0 2px;
+    }
+    
+    .slick-dots {
+        bottom: -40px;
+    }
+}
+
+/* Responsividade para mobile pequeno */
+@media (max-width: 480px) {
+    #habilidades {
+        padding: 15px 8px;
+        margin-top: 20px;
+    }
+    
+    .stack-section-title {
+        font-size: 1.5rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .skill-icon {
+        font-size: 1.8rem;
+    }
+    
+    .slick-slide > div {
+        padding: 8px 3px;
+        margin: 0 1px;
+    }
+    
+    .slick-dots {
+        bottom: -35px;
+    }
+    
+    .slick-dots li button:before {
+        font-size: 10px;
+    }
+}

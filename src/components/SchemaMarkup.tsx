@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { SchemaMarkupProps, Project } from '../types';
 
-const SchemaMarkup = ({ type = 'Person', data }) => {
+interface SchemaMarkupExtendedProps extends SchemaMarkupProps {
+  data?: Project;
+}
+
+const SchemaMarkup: React.FC<SchemaMarkupExtendedProps> = ({ type = 'Person', data }) => {
   const getPersonSchema = () => ({
     "@context": "https://schema.org",
     "@type": "Person",
@@ -16,7 +21,7 @@ const SchemaMarkup = ({ type = 'Person', data }) => {
     ],
     "knowsAbout": [
       "React",
-      "Node.js", 
+      "Node.js",
       "JavaScript",
       "HTML",
       "CSS",
@@ -51,7 +56,7 @@ const SchemaMarkup = ({ type = 'Person', data }) => {
     "inLanguage": "pt-BR"
   });
 
-  const getProjectSchema = (project) => ({
+  const getProjectSchema = (project: Project) => ({
     "@context": "https://schema.org",
     "@type": "CreativeWork",
     "name": project.titulo,
@@ -73,30 +78,25 @@ const SchemaMarkup = ({ type = 'Person', data }) => {
         return getPersonSchema();
       case 'Portfolio':
         return getPortfolioSchema();
-      case 'Project':
-        return getProjectSchema(data);
       default:
         return getPersonSchema();
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const schema = getSchema();
-    
-    // Remove schema anterior se existir
+
     const existingScript = document.querySelector('script[type="application/ld+json"]');
     if (existingScript) {
       existingScript.remove();
     }
 
-    // Adiciona novo schema
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.text = JSON.stringify(schema);
     document.head.appendChild(script);
 
     return () => {
-      // Cleanup
       if (script.parentNode) {
         script.parentNode.removeChild(script);
       }

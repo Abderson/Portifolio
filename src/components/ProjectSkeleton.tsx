@@ -1,7 +1,11 @@
 import React from 'react';
 import './ProjectSkeleton.css';
 
-const ProjectSkeleton = ({ count = 6 }) => {
+interface ProjectSkeletonProps {
+  count?: number;
+}
+
+const ProjectSkeleton: React.FC<ProjectSkeletonProps> = ({ count = 6 }) => {
   return (
     <div className="skeleton-container">
       {Array.from({ length: count }).map((_, index) => (

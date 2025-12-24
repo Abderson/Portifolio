@@ -1,20 +1,45 @@
 
-# Portfólio - Abderson
+# 🚀 Portfólio - Anderson Ferreira
 
 Bem-vindo ao meu portfólio!  
 Este projeto reúne meus principais trabalhos, experiências e habilidades como desenvolvedor.
 
+> **✨ Migrado de Create React App para Vite + TypeScript**
+> - ⚡ Performance até 10x mais rápida
+> - 🛡️ Type safety com TypeScript
+> - 📦 Build otimizado e moderno
+
 ## 🚀 Sobre o projeto
 
-Este portfólio foi desenvolvido em ReactJS e tem como objetivo apresentar meus projetos, stacks, certificados e formas de contato de maneira moderna e responsiva.
+Este portfólio foi desenvolvido com **Vite + React + TypeScript** e tem como objetivo apresentar meus projetos, stacks, certificados e formas de contato de maneira moderna e responsiva.
 
 ## 🛠️ Tecnologias utilizadas
 
-- ReactJS
-- CSS
-- JavaScript
-- Vercel (deploy)
-- GitHub
+- **Vite** - Build tool ultrarrápido
+- **React 18** - Biblioteca JavaScript para interfaces
+- **TypeScript** - JavaScript com tipagem estática
+- **React Router DOM** - Navegação entre páginas
+- **AOS (Animate On Scroll)** - Animações ao rolar a página
+- **React Slick** - Carrossel de elementos
+- **Font Awesome** - Ícones
+- **CSS3** - Estilização
+- **Vercel** - Deploy
+
+## 📦 Como rodar o projeto
+
+```bash
+# Instale as dependências
+npm install
+
+# Inicie o servidor de desenvolvimento (porta 3000)
+npm run dev
+
+# Crie o build de produção
+npm run build
+
+# Visualize o build localmente
+npm run preview
+```
 
 ## 📸 Screenshots
 

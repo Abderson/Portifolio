@@ -8,10 +8,16 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-// Inicializar AOS
 AOS.init({ duration: 1000 });
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const rootElement = document.getElementById('root');
+
+if (!rootElement) {
+  throw new Error('Failed to find the root element');
+}
+
+const root = ReactDOM.createRoot(rootElement);
+
 root.render(
   <React.StrictMode>
     <ThemeProvider>
@@ -19,5 +25,3 @@ root.render(
     </ThemeProvider>
   </React.StrictMode>
 );
-
-

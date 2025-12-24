@@ -12,8 +12,8 @@ const projetos: Project[] = [
     descricao: "Um site moderno e responsivo para a venda de e-books, desenvolvido como parte de um curso na Alura.",
     tecnologias: ["HTML", "CSS", "JavaScript"],
     imagem: "/img/Captura de tela 2024-12-18 192847.png",
-    github: "#",
-    demo: "#",
+    github: "https://github.com/Abderson/Alurabook",
+    demo: "https://alurabook-seven-psi.vercel.app",
   },
   {
     titulo: "Alura+",

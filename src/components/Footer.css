@@ -265,12 +265,15 @@
 /* ===== FOOTER INFERIOR ===== */
 .footer-bottom {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding-top: 20px;
 }
 
 .footer-copyright {
+  display: flex;
+  align-items: center;
+  gap: 15px;
   font-family: 'Inter', sans-serif;
   font-size: 0.9rem;
   color: var(--footer-text-muted);
@@ -294,6 +297,11 @@
 .heart-icon {
   color: #ff4757;
   animation: heartbeat 1.5s infinite;
+}
+
+.back-to-top {
+  margin-left: auto;
+
 }
 
 @keyframes heartbeat {
@@ -489,6 +497,9 @@
 
   .footer-copyright {
     font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .back-to-top {

@@ -112,17 +112,16 @@ const Footer: React.FC = () => {
               Feito com <i className="fas fa-heart heart-icon"></i> e muito ☕
             </p>
           </div>
-
-          {/* Botão Voltar ao Topo */}
-          <button
-            className="back-to-top"
-            onClick={scrollToTop}
-            aria-label="Voltar ao topo"
-            title="Voltar ao topo"
-          >
-            <i className="fas fa-arrow-up"></i>
-          </button>
         </div>
+
+        <button
+          className="back-to-top"
+          onClick={scrollToTop}
+          aria-label="Voltar ao topo"
+          title="Voltar ao topo"
+        >
+          <i className="fas fa-arrow-up"></i>
+        </button>
       </div>
 
       {/* Wave Effect */}

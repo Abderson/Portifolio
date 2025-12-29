@@ -28,7 +28,7 @@ const certificados: CertificadoExtended[] = [
   {
     id: 3,
     titulo: "HTML e CSS: ambientes de desenvolvimento, estrutura de arquivos e tags",
-    instituicao: "Rocketseat",
+    instituicao: "Alura",
     data: "2024",
     imagem: "/img/certificados/certificado_3.png",
     link: "https://cursos.alura.com.br/user/anderson2013ferreira/course/html-css-ambiente-arquivos-tags/certificate",

@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { SchemaMarkupProps, Project } from '../types';
 
 interface SchemaMarkupExtendedProps extends SchemaMarkupProps {
   data?: Project;
 }
 
-const SchemaMarkup: React.FC<SchemaMarkupExtendedProps> = ({ type = 'Person', data }) => {
+const SchemaMarkup: React.FC<SchemaMarkupExtendedProps> = ({ type = 'Person' }) => {
   const getPersonSchema = () => ({
     "@context": "https://schema.org",
     "@type": "Person",
@@ -72,7 +72,7 @@ const SchemaMarkup: React.FC<SchemaMarkupExtendedProps> = ({ type = 'Person', da
   //   "codeRepository": project.github !== "#" ? project.github : undefined
   // });
 
-  const getSchema = () => {
+  const getSchema = useCallback(() => {
     switch (type) {
       case 'Person':
         return getPersonSchema();
@@ -81,7 +81,7 @@ const SchemaMarkup: React.FC<SchemaMarkupExtendedProps> = ({ type = 'Person', da
       default:
         return getPersonSchema();
     }
-  };
+  }, [type]);
 
   useEffect(() => {
     const schema = getSchema();
@@ -101,7 +101,7 @@ const SchemaMarkup: React.FC<SchemaMarkupExtendedProps> = ({ type = 'Person', da
         script.parentNode.removeChild(script);
       }
     };
-  }, [type, data]);
+  }, [getSchema]);
 
   return null;
 };

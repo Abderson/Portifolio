@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Nav from './components/Nav';
 import Sobre from './components/Sobre';
 import Stack from './components/Stack';
+import Servicos from './components/Servicos';
 import Projetos from './components/Projetos';
 import Footer from './components/Footer';
 import Contato from './components/Contato';
@@ -27,6 +28,7 @@ const AppRoutes: React.FC = () => {
                   <Header />
                   <Sobre />
                   <Stack />
+                  <Servicos />
                   <Projetos />
                   <Contato />
                 </main>

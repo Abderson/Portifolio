@@ -1,0 +1,115 @@
+.servicos-section {
+  padding: 90px 20px;
+  background: var(--bg-secondary, #111);
+}
+
+.servicos-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.servicos-header {
+  max-width: 780px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.servicos-kicker {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--accent-primary, #61dafb);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+}
+
+.servicos-header h2 {
+  margin: 0 0 18px;
+  color: var(--text-primary, #fff);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.servicos-header p {
+  margin: 0;
+  color: var(--text-secondary, #ccc);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.servico-card {
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid var(--border-primary, rgba(97, 218, 251, 0.2));
+  border-radius: 8px;
+  padding: 28px;
+  min-height: 240px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servico-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-primary, #61dafb);
+  box-shadow: 0 12px 30px rgba(97, 218, 251, 0.16);
+}
+
+.servico-icon {
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  border-radius: 8px;
+  background: rgba(97, 218, 251, 0.12);
+  color: var(--accent-primary, #61dafb);
+  font-size: 1.45rem;
+}
+
+.servico-card h3 {
+  margin: 0 0 12px;
+  color: var(--text-primary, #fff);
+  font-size: 1.22rem;
+}
+
+.servico-card p {
+  margin: 0;
+  color: var(--text-secondary, #ccc);
+  line-height: 1.65;
+}
+
+.servicos-cta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.servicos-cta div {
+  padding: 20px;
+  border-left: 4px solid var(--accent-primary, #61dafb);
+  background: rgba(97, 218, 251, 0.08);
+  color: var(--text-secondary, #ccc);
+  border-radius: 8px;
+  line-height: 1.6;
+}
+
+.servicos-cta strong {
+  color: var(--text-primary, #fff);
+}
+
+@media (max-width: 768px) {
+  .servicos-section {
+    padding: 70px 16px;
+  }
+
+  .servicos-cta {
+    grid-template-columns: 1fr;
+  }
+}

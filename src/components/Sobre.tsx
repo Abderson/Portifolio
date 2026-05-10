@@ -25,30 +25,30 @@ const Sobre: React.FC = () => {
   const [activeTimeline, setActiveTimeline] = useState<number>(0);
 
   const stats: StatCard[] = [
-    { icon: 'fas fa-code', value: '10+', label: 'Projetos Concluídos' },
-    { icon: 'fas fa-layer-group', value: '8+', label: 'Tecnologias' },
+    { icon: 'fas fa-code', value: '10+', label: 'Projetos publicados' },
+    { icon: 'fas fa-layer-group', value: '8+', label: 'Tecnologias praticadas' },
     { icon: 'fas fa-certificate', value: '15+', label: 'Certificações' },
-    { icon: 'fas fa-rocket', value: '2+', label: 'Anos de Estudo' }
+    { icon: 'fas fa-rocket', value: '2+', label: 'Anos de evolução' }
   ];
 
   const timeline: TimelineItem[] = [
     {
       year: '2023 - 2025',
       title: 'Análise e Desenvolvimento de Sistemas',
-      institution: 'Universidade de taubaté (UNITAU)',
-      description: 'Formação completa em desenvolvimento de software, banco de dados e arquitetura de sistemas.'
+      institution: 'Universidade de Taubaté (UNITAU)',
+      description: 'Formação focada em desenvolvimento de software, banco de dados, lógica, análise de requisitos e arquitetura de sistemas.'
     },
     {
       year: '2023',
       title: 'Formação Full Stack',
       institution: 'Sujeito Programador',
-      description: 'Trilha completa de desenvolvimento web com HTML, CSS, JavaScript, React, Node.js e Git.'
+      description: 'Trilha prática de desenvolvimento web com HTML, CSS, JavaScript, React, Node.js, APIs e Git.'
     },
     {
       year: '2022 - 2023',
       title: 'Transição de Carreira',
       institution: 'Autônomo',
-      description: 'Decisão de migrar para tecnologia, iniciando estudos intensivos em programação.'
+      description: 'Início dos estudos intensivos em programação, com rotina de prática, projetos próprios e publicação no GitHub.'
     }
   ];
 
@@ -75,11 +75,6 @@ const Sobre: React.FC = () => {
     }
   ];
 
-  const handleDownloadCV = () => {
-    // Implementar download do CV
-    alert('Funcionalidade de download do CV será implementada em breve!');
-  };
-
   return (
     <section id="sobre" className="sobre-section">
       <div className="sobre-container">
@@ -99,24 +94,29 @@ const Sobre: React.FC = () => {
           <div className="intro-content">
             <h3>Desenvolvedor Full Stack em Formação</h3>
             <p className="intro-text">
-              Sou um profissional em <span>transição de carreira</span> para a área de Desenvolvimento de Software,
-              atualmente cursando <span>Análise e Desenvolvimento de Sistemas</span>.
+              Sou estudante de <span>Análise e Desenvolvimento de Sistemas</span> e estou em busca da minha
+              primeira oportunidade como <span>desenvolvedor júnior</span>, além de desenvolver projetos freelance para negócios locais.
             </p>
             <p className="intro-text">
-              Domino tecnologias como <span>HTML</span>, <span>CSS</span>, <span>JavaScript</span>,
+              Trabalho com <span>HTML</span>, <span>CSS</span>, <span>JavaScript</span>,
               <span>TypeScript</span>, <span>React</span>, <span>Node.js</span> e <span>Git/GitHub</span>,
-              além de possuir uma base sólida em lógica de programação, boas práticas de desenvolvimento web e versionamento de código.
+              criando interfaces responsivas, organizadas e pensadas para uso real.
             </p>
             <p className="intro-text">
-              Tenho um perfil <span>analítico e colaborativo</span>, com foco em entregar soluções eficientes,
-              seguras e de fácil manutenção. Sou movido por desafios e estou sempre em busca de aprimorar
-              minhas habilidades e contribuir com projetos que unam <span>inovação e propósito</span>.
+              Meu foco é unir <span>boa comunicação</span>, <span>aprendizado rápido</span> e
+              <span> entrega consistente</span>. Para empresas, quero somar em times de desenvolvimento; para clientes,
+              quero transformar ideias em páginas e sistemas simples que ajudem a vender, organizar e gerar contato.
             </p>
 
-            <button className="btn-download-cv" onClick={handleDownloadCV}>
+            <a
+              className="btn-download-cv"
+              href="/curriculos/Anderson_Ferreira_CV.pdf"
+              download="Anderson_Ferreira_CV.pdf"
+              aria-label="Baixar currículo de Anderson Ferreira em PDF"
+            >
               <i className="fas fa-download"></i>
               Download CV
-            </button>
+            </a>
           </div>
         </div>
 

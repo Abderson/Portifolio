@@ -109,10 +109,14 @@ const Contato: React.FC = () => {
     setSubmitStatus('idle');
 
     try {
-      // Simula envio (substitua por sua API)
-      await new Promise(resolve => setTimeout(resolve, 2000));
-
-      console.log('Form data:', formData);
+      const message = encodeURIComponent(
+        `Olá, Anderson! Meu nome é ${formData.nome}.\n\n` +
+        `Assunto: ${formData.assunto}\n` +
+        `Email: ${formData.email}\n` +
+        `Telefone: ${formData.telefone || 'Não informado'}\n\n` +
+        `Mensagem: ${formData.mensagem}`
+      );
+      window.open(`https://wa.me/5512991769951?text=${message}`, '_blank', 'noopener,noreferrer');
 
       setSubmitStatus('success');
       setFormData({
@@ -147,7 +151,7 @@ const Contato: React.FC = () => {
             Vamos Conversar?
           </h2>
           <p className="contato-subtitle">
-            Estou sempre aberto a novos projetos e oportunidades. Entre em contato!
+            Estou aberto a oportunidades como desenvolvedor júnior e a projetos freelance para sites, landing pages e aplicações web.
           </p>
         </div>
 
@@ -245,11 +249,13 @@ const Contato: React.FC = () => {
                   className={errors.assunto ? 'error' : ''}
                 >
                   <option value="">Selecione um assunto</option>
-                  <option value="freelance">Trabalho Freelance</option>
-                  <option value="emprego">Oportunidade de Emprego</option>
-                  <option value="projeto">Proposta de Projeto</option>
+                  <option value="Freelance">Trabalho Freelance</option>
+                  <option value="Oportunidade de Emprego">Oportunidade de Emprego</option>
+                  <option value="Site para Loja ou Negócio Local">Site para Loja ou Negócio Local</option>
+                  <option value="Landing Page">Landing Page</option>
+                  <option value="Proposta de Projeto">Proposta de Projeto</option>
                   <option value="parceria">Parceria</option>
-                  <option value="outro">Outro</option>
+                  <option value="Outro">Outro</option>
                 </select>
                 {errors.assunto && <span className="error-message">{errors.assunto}</span>}
               </div>
@@ -264,7 +270,7 @@ const Contato: React.FC = () => {
                   value={formData.mensagem}
                   onChange={handleChange}
                   className={errors.mensagem ? 'error' : ''}
-                  placeholder="Descreva sua proposta ou dúvida..."
+                  placeholder="Conte rapidamente o que você precisa, prazo desejado e objetivo do projeto..."
                   rows={6}
                 ></textarea>
                 {errors.mensagem && <span className="error-message">{errors.mensagem}</span>}
@@ -283,7 +289,7 @@ const Contato: React.FC = () => {
                 ) : (
                   <>
                     <i className="fas fa-paper-plane"></i>
-                    Enviar Mensagem
+                    Enviar pelo WhatsApp
                   </>
                 )}
               </button>
@@ -291,7 +297,7 @@ const Contato: React.FC = () => {
               {submitStatus === 'success' && (
                 <div className="submit-message success">
                   <i className="fas fa-check-circle"></i>
-                  Mensagem enviada com sucesso! Entrarei em contato em breve.
+                  WhatsApp aberto com sua mensagem. Se a janela não abriu, use um dos contatos ao lado.
                 </div>
               )}
 

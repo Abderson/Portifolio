@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import './Header.css';
 import SEOHead from './SEOHead';
 import SchemaMarkup from './SchemaMarkup';
@@ -12,12 +12,12 @@ const Header: React.FC = () => {
   const [isDeleting, setIsDeleting] = useState<boolean>(false);
   const [charIndex, setCharIndex] = useState<number>(0);
 
-  const phrases = [
-    "Desenvolvedor Full Stack",
-    "Criando Soluções Digitais",
-    "Transformando Ideias em Código",
-    "Inovação & Tecnologia"
-  ];
+  const phrases = useMemo(() => [
+    "Desenvolvedor Full Stack Júnior",
+    "React, TypeScript e Node.js",
+    "Sites para negócios locais",
+    "Landing pages que geram contato"
+  ], []);
 
 
 
@@ -52,9 +52,9 @@ const Header: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Anderson Ferreira - Desenvolvedor Full Stack"
-        description="Desenvolvedor Full Stack especializado em React, Node.js, JavaScript e tecnologias modernas. Ofereço soluções completas para seu negócio digital."
-        keywords="desenvolvedor, full stack, react, node.js, javascript, frontend, backend, portfolio, projetos, soluções digitais"
+        title="Anderson Ferreira - Desenvolvedor Full Stack Júnior"
+        description="Desenvolvedor em formação em Análise e Desenvolvimento de Sistemas. Crio sites, landing pages e aplicações web com React, TypeScript, Node.js e foco em negócios reais."
+        keywords="desenvolvedor júnior, front-end, full stack, react, node.js, typescript, freelancer, landing page, sites para lojas, portfolio"
         image="/img/foto-perfil-fundo-branco.png"
       />
       <SchemaMarkup type="Person" />
@@ -89,11 +89,11 @@ const Header: React.FC = () => {
           {/* Status Badge */}
           <div className="status-badge" data-aos="zoom-in">
             <span className="pulse"></span>
-            Disponível para projetos
+            Disponível para vaga júnior e freelance
           </div>
 
           <h1 data-aos="fade-down" data-aos-delay="200">
-            Olá, Seja bem vindo 👋
+            Anderson Ferreira
           </h1>
 
           <div className="rotating-text" data-aos="fade-up" data-aos-delay="400">
@@ -105,7 +105,7 @@ const Header: React.FC = () => {
           </div>
 
           <p className="subtitle" data-aos="fade-up" data-aos-delay="600">
-            Transformo suas ideias em soluções digitais inovadoras e eficientes
+            Desenvolvedor em formação em Análise e Desenvolvimento de Sistemas, criando sites e aplicações web para empresas, recrutadores e clientes que precisam aparecer melhor na internet.
           </p>
 
           {/* CTA Buttons */}
@@ -124,7 +124,7 @@ const Header: React.FC = () => {
               aria-label="Entrar em contato"
             >
               <i className="fas fa-envelope"></i>
-              Entre em Contato
+              Falar Comigo
             </button>
           </div>
         </div>

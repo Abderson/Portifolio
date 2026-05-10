@@ -60,7 +60,7 @@ const Stack: React.FC = () => {
             Tecnologias & Habilidades
           </h2>
           <p className="stack-subtitle">
-            Ferramentas e tecnologias que domino para criar soluções completas
+            Tecnologias que venho usando em projetos publicados, estudos e soluções web para negócios reais
           </p>
         </div>
 

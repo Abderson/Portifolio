@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Nav.css";
 
 const Nav: React.FC = () => {
@@ -7,6 +7,7 @@ const Nav: React.FC = () => {
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>("inicio");
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Detecta scroll para adicionar efeito no navbar
   useEffect(() => {
@@ -21,7 +22,7 @@ const Nav: React.FC = () => {
   // Detecta seção ativa baseado no scroll
   useEffect(() => {
     const handleSectionScroll = () => {
-      const sections = ["inicio", "sobre", "projetos", "contato"];
+      const sections = ["inicio", "sobre", "servicos", "projetos", "contato"];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -49,6 +50,27 @@ const Nav: React.FC = () => {
 
   const closeMenu = (): void => {
     setOpen(false);
+  };
+
+  const scrollToSection = (section: string): void => {
+    const element = document.getElementById(section);
+    element?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const handleSectionClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    section: string
+  ): void => {
+    event.preventDefault();
+    closeMenu();
+
+    if (location.pathname !== "/") {
+      navigate("/");
+      window.setTimeout(() => scrollToSection(section), 100);
+      return;
+    }
+
+    scrollToSection(section);
   };
 
   const isActive = (section: string): boolean => {
@@ -91,7 +113,7 @@ const Nav: React.FC = () => {
           <li role="none">
             <a
               href="#sobre"
-              onClick={closeMenu}
+              onClick={(event) => handleSectionClick(event, "sobre")}
               className={`nav-link ${isActive("sobre") ? "active" : ""}`}
               role="menuitem"
               aria-label="Ir para seção sobre mim"
@@ -102,8 +124,20 @@ const Nav: React.FC = () => {
           </li>
           <li role="none">
             <a
+              href="#servicos"
+              onClick={(event) => handleSectionClick(event, "servicos")}
+              className={`nav-link ${isActive("servicos") ? "active" : ""}`}
+              role="menuitem"
+              aria-label="Ir para seção de serviços"
+            >
+              <span className="nav-icon">🧩</span>
+              <span>Serviços</span>
+            </a>
+          </li>
+          <li role="none">
+            <a
               href="#projetos"
-              onClick={closeMenu}
+              onClick={(event) => handleSectionClick(event, "projetos")}
               className={`nav-link ${isActive("projetos") ? "active" : ""}`}
               role="menuitem"
               aria-label="Ir para seção de projetos"
@@ -127,7 +161,7 @@ const Nav: React.FC = () => {
           <li role="none">
             <a
               href="#contato"
-              onClick={closeMenu}
+              onClick={(event) => handleSectionClick(event, "contato")}
               className={`nav-link ${isActive("contato") ? "active" : ""}`}
               role="menuitem"
               aria-label="Ir para seção de contato"

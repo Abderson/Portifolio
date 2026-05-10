@@ -9,7 +9,7 @@ import "./Projetos.css";
 const projetos: Project[] = [
   {
     titulo: "Alurabook",
-    descricao: "Um site moderno e responsivo para a venda de e-books, desenvolvido como parte de um curso na Alura.",
+    descricao: "Página responsiva de livraria digital, com foco em layout limpo, organização de catálogo e experiência de compra em diferentes telas.",
     tecnologias: ["HTML", "CSS", "JavaScript"],
     imagem: "/img/Captura de tela 2024-12-18 192847.png",
     github: "https://github.com/Abderson/Alurabook",
@@ -17,7 +17,7 @@ const projetos: Project[] = [
   },
   {
     titulo: "Alura+",
-    descricao: "Landing page desenvolvida para reforçar conceitos de HTML, CSS e boas práticas de front-end.",
+    descricao: "Landing page de assinatura com hierarquia visual clara, chamadas para ação e estrutura parecida com páginas comerciais reais.",
     tecnologias: ["HTML", "CSS", "JavaScript"],
     imagem: "/img/Captura de tela 2024-12-18 192531.png",
     github: "https://github.com/Abderson/Aluraplus",
@@ -25,7 +25,7 @@ const projetos: Project[] = [
   },
   {
     titulo: "Tesla",
-    descricao: "Recriação de uma página inspirada na Tesla, com foco em tecnologia avançada e design moderno.",
+    descricao: "Página inspirada na Tesla para praticar composição visual, responsividade e apresentação de produto com aparência premium.",
     tecnologias: ["HTML", "CSS", "JavaScript"],
     imagem: "/img/Captura de tela 2024-12-16 185536.png",
     github: "https://github.com/Abderson/tesla",
@@ -33,7 +33,7 @@ const projetos: Project[] = [
   },
   {
     titulo: "PrimeFlix",
-    descricao: "Site de um ecommerce de filmes, com foco em tecnologia avançada e design moderno.",
+    descricao: "Aplicação de filmes com listagem, navegação e interface em React, simulando uma experiência de catálogo para o usuário final.",
     tecnologias: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express", "MongoDB"],
     imagem: "/img/Prime_flix.png",
     github: "https://github.com/Abderson/primeflix",
@@ -41,7 +41,7 @@ const projetos: Project[] = [
   },
   {
     titulo: "Clone do Instagram",
-    descricao: "Clone do Instagram, com foco em tecnologia avançada e design moderno.",
+    descricao: "Clone de rede social para praticar componentes reutilizáveis, layout responsivo e construção de interfaces familiares ao usuário.",
     tecnologias: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express", "MongoDB"],
     imagem: "/img/instagram.png",
     github: "https://github.com/Abderson/instagram-clone",
@@ -49,7 +49,7 @@ const projetos: Project[] = [
   },
   {
     titulo: "Bolsas de Maternidade Personalizadas",
-    descricao: "Site de um ecommerce de bolsas de maternidade, com foco em tecnologia avançada e design moderno.",
+    descricao: "Projeto com perfil comercial para um ateliê, apresentando produtos personalizados de forma visual e pronta para captação de clientes.",
     tecnologias: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "Bootstrap"],
     imagem: "/img/projeto-atelie.png",
     github: "https://github.com/Abderson/projeto_jeniffer_lopes",
@@ -57,20 +57,20 @@ const projetos: Project[] = [
   },
 
   {
-    titulo: "Calculadora de combustivel",
-    descricao: " Uma calculadora para estimar qual combustivel é mais econômico para o seu veículo.",
+    titulo: "Calculadora de Combustível",
+    descricao: "Ferramenta web que compara álcool e gasolina para ajudar o usuário a decidir qual combustível compensa mais.",
     tecnologias: ["React", "Node.js", "vite.js", "typescript", "CSS"],
-    imagem: "/public/img/calculadora-combustivel.png",
+    imagem: "/img/calculadora-combustivel.png",
     github: "https://github.com/Abderson/calculadora_Combustivel",
     demo: "https://calculadora-combustivel-six.vercel.app/",
   },
 
   {
     titulo: "Agenda de Compromissos",
-    descricao: " Uma aplicação web para gerenciar compromissos e tarefas diárias de forma eficiente.",
+    descricao: "Aplicação para organizar compromissos e tarefas, com foco em fluxo simples, produtividade e uso no dia a dia.",
     tecnologias: ["React", "JavaScript", "typescript", "CSS",],
-    imagem: "/public/img/agenda-compromisso.png",
-    github: "https://github.com/Abderson/AGENDA-COMPROMISSOS ",
+    imagem: "/img/agenda-compromisso.png",
+    github: "https://github.com/Abderson/AGENDA-COMPROMISSOS",
     demo: "https://agenda-compromissos-zeta.vercel.app",
   },
 ];
@@ -109,9 +109,9 @@ const Projetos: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Portfólio de Projetos - Anderson Ferreira"
-        description="Explore meus projetos de desenvolvimento web, incluindo Alurabook, Alura+, Tesla, PrimeFlix e outros projetos full stack com React, Node.js e JavaScript."
-        keywords="projetos, desenvolvimento, react, node.js, javascript, portfolio, alurabook, tesla, primeflix"
+        title="Projetos Web - Anderson Ferreira"
+        description="Projetos publicados de desenvolvimento web com React, TypeScript, JavaScript e Node.js, incluindo landing pages, aplicações e sites comerciais."
+        keywords="projetos web, desenvolvedor júnior, react, typescript, node.js, landing page, sites comerciais, portfolio"
       />
       <SchemaMarkup type="Portfolio" />
 
@@ -127,7 +127,7 @@ const Projetos: React.FC = () => {
             Meus Projetos
           </h2>
           <p className="projetos-subtitle">
-            Explore meu trabalho e as tecnologias que utilizo
+            Projetos publicados com demo e código para mostrar minha evolução, organização e capacidade de entregar interfaces reais
           </p>
         </div>
 

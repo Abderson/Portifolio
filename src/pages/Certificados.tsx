@@ -124,6 +124,15 @@ const certificados: CertificadoExtended[] = [
     link: "#",
     categoria: "Carreira"
   },
+  {
+    id: 14,
+    titulo: "Introduction ao Git.",
+    instituicao: "Datacamp",
+    data: "2026",
+    imagem: "/dist/img/certificados/Introduction_git.png.png",
+    link: "https://www.datacamp.com/certificate/DAC123456",
+    categoria: "Ferramentas"
+  }
 ];
 
 const Certificados: React.FC = () => {
